@@ -4,6 +4,15 @@ def encode_password(password):
     for char in password:
         encoded_password.append(str(int(char) + 3))
     return "".join(encoded_password)
+def decoded_password(input_string):
+    result_string = ""
+    for char in input_string:
+        if char.isdigit():
+            new_char = str((int(char) - 3) % 10)
+            result_string += new_char
+        else:
+            result_string += char
+    print("Decoded Password:", result_string)
 def menu_printer():
     print('''
     Menu
@@ -23,7 +32,7 @@ def main():
             encoded_password = encode_password(str(input("Enter your password to be encoded: ")))
             print(encoded_password)
         elif menu_option == 2:
-            # decode_password(encoded_password)
+            decoded_password(encoded_password)
             pass
         else:
             print("Please choose a valid option")
