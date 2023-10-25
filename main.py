@@ -20,7 +20,8 @@ def main():
         menu_printer()
         menu_option = int(input("Please enter an option: "))
         if menu_option == 1:
-            print(encode_password(str(input("Enter your password to be encoded: "))))
+            encoded_password = encode_password(str(input("Enter your password to be encoded: ")))
+            print(encoded_password)
         elif menu_option == 2:
             # decode_password(encoded_password)
             pass
